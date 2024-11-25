@@ -1,0 +1,8 @@
+name: Automatic merge
+conditions:
+  #- "#approved-reviews-by >= 1"
+  #- author = renovate[bot]
+  - "check-success>=1"
+actions:
+  merge:
+    method: merge
