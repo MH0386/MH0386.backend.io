@@ -1,8 +1,11 @@
 name: Automatic merge
 conditions:
-  #- "#approved-reviews-by >= 1"
-  #- author = renovate[bot]
-  - "check-success>=1"
+  - check-success>=1
 actions:
   merge:
     method: merge
+queue_rules:
+  - queue_branch_merge_method: fast-forward
+    allow_queue_branch_edit: true
+    update_method: merge
+    name: default
