@@ -1,9 +1,14 @@
-name: Automatic merge
-conditions:
-  - check-success>=1
-actions:
-  merge:
-    method: merge
+pull_request_rules:
+  - name: Automatically merge Dependabot PRs
+    conditions:
+      - author = dependabot[bot]
+    actions:
+      queue:
+  - name: Automatically merge Renovate PRs
+    conditions:
+      - author = renovate[bot]
+    actions:
+      queue:
 queue_rules:
   - queue_branch_merge_method: fast-forward
     allow_queue_branch_edit: true
